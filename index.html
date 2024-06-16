@@ -1,0 +1,185 @@
+<html lang="">
+  
+  <head>
+    <title>Docker Proxy 镜像加速</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="https://img.yzcdn.net/favicon.ico">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@stilleshan">
+    <meta name="twitter:creator" content="@stilleshan">
+    <meta property="og:url" content="https://domain">
+    <meta property="og:title" content="Docker Proxy 镜像加速">
+    <meta property="og:description" content="多平台容器镜像代理服务,支持 Docker Hub, GitHub, Google, k8s 等镜像仓库.">
+    <!--<meta property="og:image" content="https://domain/img/dockerproxy_com_twitter_800.jpg">-->
+    <link href="https://static.yzcdn.net/docker-proxy-ui/css/chunk-vendors.0f26c600.css" rel="stylesheet">
+    <link href="https://static.yzcdn.net/docker-proxy-ui/css/main.css" rel="stylesheet">
+    <link href="https://static.yzcdn.net/docker-proxy-ui/css/app.a3248ab2.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://static.yzcdn.net/docker-proxy-ui/css/574.b8b335ff.css">
+    <style class="automa-element-selector">@font-face { font-family: "Inter var"; font-weight: 100 900; font-display: swap; font-style: normal; font-named-instance: "Regular"; src: url("chrome-extension://infppggnoaenmfagbfknfkancpbljcca/Inter-roman-latin.var.woff2") format("woff2") } .automa-element-selector { direction: ltr } [automa-isDragging] { user-select: none } [automa-el-list] {outline: 2px dashed #6366f1;}
+    </style>
+</head>
+  <body>
+    <div id="app" data-v-app="">
+      <body class="is-preload homepage">
+        <div>
+          <div id="titleBar">
+            <a href="#navPanel" class="toggle"></a>
+            <span class="title">docker proxy</span></div>
+          <div id="navPanel">
+            <nav>
+              <a aria-current="page" href="/" class="router-link-active router-link-exact-active link depth-0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                <span class="indent-0"></span>首页</a>
+            </nav>
+            <!--<nav>-->
+            <!--  <a href="/docs" class="link depth-0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">-->
+            <!--    <span class="indent-0"></span>使用文档</a>-->
+            <!--</nav>-->
+            <!--<nav>-->
+            <!--  <a href="https://st1.hosbb.com/#/register?code=gBXmmXyG" target="_blank" class="link depth-0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">-->
+            <!--    <span class="indent-0"></span>推荐 IPLC 机场666</a>-->
+            <!--</nav>-->
+            <!--<nav>-->
+            <!--  <a href="https://freefrp.net/vip" target="_blank" class="link depth-0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">-->
+            <!--    <span class="indent-0"></span>FRP 内网穿透 VIP 服务</a>-->
+            <!--</nav>-->
+            <!--<nav>-->
+            <!--  <a href="https://rssforever.com/vip" target="_blank" class="link depth-0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">-->
+            <!--    <span class="indent-0"></span>RSS 订阅 VIP 服务</a>-->
+            <!--</nav>-->
+            <!--<nav>-->
+            <!--  <a href="/donate" class="link depth-0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">-->
+            <!--    <span class="indent-0"></span>捐赠</a>-->
+            <!--</nav>-->
+            <!--<nav>-->
+            <!--  <a href="/contact" class="link depth-0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">-->
+            <!--    <span class="indent-0"></span>留言</a>-->
+            <!--</nav>-->
+            <!--<nav>-->
+            <!--  <a href="#" target="" class="link depth-0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">-->
+            <!--    <span class="indent-0"></span>更多</a>-->
+            <!--</nav>-->
+            <!--<nav>-->
+            <!--  <a href="https://mirror.ghproxy.com" target="_blank" class="link depth-1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">-->
+            <!--    <span class="indent-1"></span>GitHub 代理加速</a>-->
+            <!--</nav>-->
+            <!--<nav>-->
+            <!--  <a href="https://rssforever.com" target="_blank" class="link depth-1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">-->
+            <!--    <span class="indent-1"></span>RSS 订阅服务</a>-->
+            <!--</nav>-->
+            <!--<nav>-->
+            <!--  <a href="https://freefrp.net" target="_blank" class="link depth-1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">-->
+            <!--    <span class="indent-1"></span>FRP 内网穿透</a>-->
+            <!--</nav>-->
+          </div>
+        </div>
+        <div id="header-wrapper">
+          <div id="header" class="container">
+            <h1>
+              <a href="/" id="logo">docker proxy</a></h1>
+            <nav id="nav">
+              <ul>
+                <li>
+                  <a aria-current="page" href="/" class="router-link-active router-link-exact-active">首页</a></li>
+                <!--<li>-->
+                <!--  <a href="/docs" class="">使用文档</a></li>-->
+                <li>
+                  <a href="https://ghproxy.cn" target="_blank">GitHub 代理加速</a></li>
+                <li>
+                  <a href="https://vc01.vc-vcity.com/#/register?code=IsXkQx0Y" target="_blank">推荐 IPLC 机场</a></li>
+                <!--<li>-->
+                <!--  <a href="https://freefrp.net/vip" target="_blank">FRP 内网穿透 VIP 服务</a></li>-->
+                <!--<li>-->
+                <!--  <a href="https://rssforever.com/vip" target="_blank">RSS 订阅 VIP 服务</a></li>-->
+                <li>
+                  <a href="https://static.yzcdn.net/gh-proxy-ui/images/wxpay.jpg" class="">捐赠</a></li>
+                <!--<li>-->
+                <!--  <a href="/contact" class="">留言</a></li>-->
+                <!--<li>-->
+                <!--  <a href="#" target="">更多</a></li>-->
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div>
+          <ul class="dropotron level-0 left" style="user-select: none; position: absolute; z-index: 10000; left: -172.8px; top: 0px; opacity: 1; visibility: hidden;">
+            <li style="white-space: nowrap;">
+              <a href="https://mirror.ghproxy.com" target="_blank" style="display: block;">GitHub 代理加速</a></li>
+            <li style="white-space: nowrap;">
+              <a href="https://rssforever.com" target="_blank" style="display: block;">RSS 订阅服务</a></li>
+            <li style="white-space: nowrap;">
+              <a href="https://freefrp.net" target="_blank" style="display: block;">FRP 内网穿透</a></li>
+          </ul>
+        </div>
+        <div id="page-wrapper">
+          <div id="main-wrapper" data-v-2f79bff7="">
+            <div id="banner-wrapper" data-v-2f79bff7="">
+              <section id="banner" class="container" data-v-2f79bff7="">
+                <div class="row" data-v-2f79bff7="">
+                  <div id="content" class="col-12" data-v-2f79bff7="">
+                    <header class="major header-inline" data-v-2f79bff7="">
+                      <h2 data-v-2f79bff7="">Docker Proxy</h2>
+                      <!--<h3 data-v-2f79bff7="">Blocked by GFW</h3>--></header>
+                    <footer data-v-2f79bff7="">
+                      <header class="major" data-v-2f79bff7="">
+                        <p data-v-2f79bff7="">
+                          <a style="color:white;text-decoration:none;" data-v-2f79bff7="">用爱发电 低调使用</a></p>
+                        <!--<p data-v-2f79bff7="">-->
+                        <!--  <a style="color:white;text-decoration:none;" data-v-2f79bff7="">本站提供企业付费私有镜像加速服务，有兴趣请留言。</a></p>-->
+                      </header>
+                      <!--<a href="/docs" class="button large" data-v-2f79bff7="">使 用 文 档</a>-->
+                      </footer>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div id="footer-wrapper" style="padding-top: 60px;">
+            <div id="footer" class="container">
+              <div class="row">
+                <section class="col-12 col-12-narrower">
+                  <header>
+                    <h2 style="text-align: center;">使用方法</h2></header>
+                  <form method="post" action="#">
+                    <div class="row gtr-50 gtr-uniform" style="justify-content: center;">
+                      <div class="col-7 col-8-narrower">
+                        <p>
+                          <b>第一步：</b>假如原始镜像地址如下</p>
+                        <div class="col-8 col-12-mobilep">
+                          <!--<input type="text" name="name" placeholder="docker pull whyour/qinglong:latest" value="docker pull whyour/qinglong:latest"></div>-->
+                          <input type="text" readonly="" placeholder="docker pull whyour/qinglong:latest" value="docker pull whyour/qinglong:latest"></div>
+                        <br>
+                        <div class="col-4">
+                          <!--<ul class="actions">-->
+                          <!-- <li>-->
+                          <!-- <a class="button alt2">获取命令</a></li>-->
+                          <!--</ul>--></div>
+                      </div>
+                    </div>
+                    <div class="row gtr-50 gtr-uniform" style="justify-content: center;">
+                      <div class="col-7 col-8-narrower">
+                        <p>
+                          <b>第二步：</b>前缀添加加速镜像地址</p>
+                      <div class="col-8 col-12-mobilep">
+                        <input type="text" readonly="" placeholder="docker pull domain/whyour/qinglong:latest" value="docker pull domain/whyour/qinglong:latest">
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                </form>
+                <div id="copyright" style="padding-bottom: 30px; padding-top: 30px;">© domain. All rights reserved.</div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        const currentDomain = window.location.hostname;
+        document.body.innerHTML = document.body.innerHTML.replace(/domain/g, currentDomain);
+      });
+    </script>
+  </body>
+</html>
