@@ -19,8 +19,28 @@
     <link rel="stylesheet" type="text/css" href="https://static.yzcdn.net/docker-proxy-ui/css/574.b8b335ff.css">
     <style class="automa-element-selector">@font-face { font-family: "Inter var"; font-weight: 100 900; font-display: swap; font-style: normal; font-named-instance: "Regular"; src: url("chrome-extension://infppggnoaenmfagbfknfkancpbljcca/Inter-roman-latin.var.woff2") format("woff2") } .automa-element-selector { direction: ltr } [automa-isDragging] { user-select: none } [automa-el-list] {outline: 2px dashed #6366f1;}
     </style>
+    <style>
+  body {
+    height: 1500px; /* 使页面足够长以便测试 */
+  }
+</style>
 </head>
   <body>
+      <script>
+  function scrollDown() {
+    // 获取当前滚动位置
+    var currentPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+    // 设置目标滚动位置，例如向下滚动200像素
+    var targetPosition = currentPosition + 500;
+
+    // 平滑滚动
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  }
+</script>
     <div id="app" data-v-app="">
       <body class="is-preload homepage">
         <div>
@@ -124,11 +144,18 @@
                     <footer data-v-2f79bff7="">
                       <header class="major" data-v-2f79bff7="">
                         <p data-v-2f79bff7="">
-                          <a style="color:white;text-decoration:none;" data-v-2f79bff7="">用爱发电 低调使用</a></p>
+                           
+                          <b><a style="color:white;text-decoration:none;font-size:50px;" data-v-2f79bff7="">用爱发电 低调使用</a></b>
+
+                          <p data-v-2f79bff7="">
+                          <a style="color:white;text-decoration:none;" href="https://dockerpull.com/" target="_blank" data-v-2f79bff7="" >地址①:pulldocker.com</a></p>
+                          <p data-v-2f79bff7="">
+                          <a style="color:white;text-decoration:none;" href="https://dockerproxy.cn/" target="_blank" data-v-2f79bff7="" >地址②:dockerproxy.cn</a></p>
+                          <!--</p>-->
                         <!--<p data-v-2f79bff7="">-->
                         <!--  <a style="color:white;text-decoration:none;" data-v-2f79bff7="">本站提供企业付费私有镜像加速服务，有兴趣请留言。</a></p>-->
                       </header>
-                      <!--<a href="/docs" class="button large" data-v-2f79bff7="">使 用 文 档</a>-->
+                      <a class="button large" href="javascript:void(0);" onclick="scrollDown()" data-v-2f79bff7="">开   始</a>
                       </footer>
                   </div>
                 </div>
@@ -145,7 +172,7 @@
                     <div class="row gtr-50 gtr-uniform" style="justify-content: center;">
                       <div class="col-7 col-8-narrower">
                         <p>
-                          <b>第一步：</b>假如原始镜像地址如下</p>
+                          <b>第一步：</b>假如拉取原始镜像命令如下</p>
                         <div class="col-8 col-12-mobilep">
                           <!--<input type="text" name="name" placeholder="docker pull whyour/qinglong:latest" value="docker pull whyour/qinglong:latest"></div>-->
                           <input type="text" readonly="" placeholder="docker pull whyour/qinglong:latest" value="docker pull whyour/qinglong:latest"></div>
@@ -160,7 +187,7 @@
                     <div class="row gtr-50 gtr-uniform" style="justify-content: center;">
                       <div class="col-7 col-8-narrower">
                         <p>
-                          <b>第二步：</b>前缀添加加速镜像地址</p>
+                          <b>第二步：</b>仅需在前缀加入加速镜像地址</p>
                       <div class="col-8 col-12-mobilep">
                         <input type="text" readonly="" placeholder="docker pull domain/whyour/qinglong:latest" value="docker pull domain/whyour/qinglong:latest">
                       </div>
