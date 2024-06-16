@@ -24,6 +24,8 @@
     height: 1500px; /* 使页面足够长以便测试 */
   }
 </style>
+<!--    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>-->
+<!--<script>LA.init({id:"KTVwd5wA3hO8h0fA",ck:"KTVwd5wA3hO8h0fA",autoTrack:true,hashMode:true,screenRecord:true})</script>-->
 </head>
   <body>
       <script>
@@ -167,12 +169,12 @@
               <div class="row">
                 <section class="col-12 col-12-narrower">
                   <header>
-                    <h2 style="text-align: center;">使用方法</h2></header>
+                    <h2 style="text-align: center;">使用方法①</h2></header>
                   <form method="post" action="#">
                     <div class="row gtr-50 gtr-uniform" style="justify-content: center;">
                       <div class="col-7 col-8-narrower">
                         <p>
-                          <b>第一步：</b>假如拉取原始镜像命令如下</p>
+                          <b>①：</b>假如拉取原始镜像命令如下</p>
                         <div class="col-8 col-12-mobilep">
                           <!--<input type="text" name="name" placeholder="docker pull whyour/qinglong:latest" value="docker pull whyour/qinglong:latest"></div>-->
                           <input type="text" readonly="" placeholder="docker pull whyour/qinglong:latest" value="docker pull whyour/qinglong:latest"></div>
@@ -184,18 +186,49 @@
                           <!--</ul>--></div>
                       </div>
                     </div>
+                    
                     <div class="row gtr-50 gtr-uniform" style="justify-content: center;">
                       <div class="col-7 col-8-narrower">
                         <p>
-                          <b>第二步：</b>仅需在前缀加入加速镜像地址</p>
+                          <b>②：</b>仅需在前缀加入加速镜像地址</p>
                       <div class="col-8 col-12-mobilep">
                         <input type="text" readonly="" placeholder="docker pull domain/whyour/qinglong:latest" value="docker pull domain/whyour/qinglong:latest">
                       </div>
                       <br>
                     </div>
                   </div>
+                  
+                  <header>
+  <h2 style="text-align: center;">使用方法②</h2>
+</header>
+<div class="row gtr-50 gtr-uniform" style="justify-content: center;">
+  <div class="col-7 col-8-narrower">
+    <p><b>一键设置镜像加速：</b>修改文件 /etc/docker/daemon.json（如果不存在则创建）</p>
+    <div class="col-8 col-12-mobilep">
+        <input type="text" readonly="" placeholder="sudo tee /etc/docker/daemon.json" value="/etc/docker/daemon.json">
+        <!--<input type="text" readonly="" placeholder="sudo mkdir -p /etc/docker" value="{"registry-mirrors": ["https://domain"]}">-->
+        <br><br>
+        <p><b>修改JSON文件 更改为以下内容 然后保存</b></p>
+<input type="text" readonly="" placeholder="" value='{"registry-mirrors": ["https://domain"]}'>
+<br><br>
+<p><b>保存好之后 执行以下两条命令</b></p>
+<input type="text" readonly="" placeholder="sudo systemctl daemon-reload" value="sudo systemctl daemon-reload #重载systemd管理守护进程配置文件">
+<br><br>
+<input type="text" readonly="" placeholder="sudo systemctl restart docker" value="sudo systemctl restart docker #重启 Docker 服务">
+
+        
+    </div>
+    <br>
+  </div>
+</div>
+                  
+                  
                 </form>
+                
+                
+                
                 <div id="copyright" style="padding-bottom: 30px; padding-top: 30px;">© domain. All rights reserved.</div>
+                <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/KTVwd5wA3hO8h0fA/quote.js?theme=4&f=12&display=0,0,1,0,0,0,0,1"></script>
               </section>
             </div>
           </div>
