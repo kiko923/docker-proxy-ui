@@ -16,6 +16,8 @@
     <link href="https://static.yzcdn.net/docker-proxy-ui/css/chunk-vendors.0f26c600.css" rel="stylesheet">
     <link href="https://static.yzcdn.net/docker-proxy-ui/css/main.css" rel="stylesheet">
     <link href="https://static.yzcdn.net/docker-proxy-ui/css/app.a3248ab2.css" rel="stylesheet">
+    <link href="https://static.yzcdn.net/layui/css/layui.css" rel="stylesheet">
+    <script src="https://static.yzcdn.net/layui/layui.js"></script>
     <link rel="stylesheet" type="text/css" href="https://static.yzcdn.net/docker-proxy-ui/css/574.b8b335ff.css">
     <style class="automa-element-selector">@font-face { font-family: "Inter var"; font-weight: 100 900; font-display: swap; font-style: normal; font-named-instance: "Regular"; src: url("chrome-extension://infppggnoaenmfagbfknfkancpbljcca/Inter-roman-latin.var.woff2") format("woff2") } .automa-element-selector { direction: ltr } [automa-isDragging] { user-select: none } [automa-el-list] {outline: 2px dashed #6366f1;}
     </style>
@@ -26,6 +28,66 @@
 </style>
 <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
 <script>LA.init({id:"KTVwd5wA3hO8h0fA",ck:"KTVwd5wA3hO8h0fA",autoTrack:true,hashMode:true,screenRecord:true})</script>
+    <script>
+    // 公告版本，可以通过更新这个变量来触发新的公告弹出
+    var announcementVersion = '20240814'; // 更新版本号以触发新公告弹出
+
+    // 公告开关，通过设置为 true 或 false 来控制是否显示公告
+    var announcementEnabled = true; // 设置为 true 表示开启公告，false 表示关闭公告
+
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function checkAnnouncement() {
+        // 先检查公告开关是否开启
+        if (!announcementEnabled) {
+            return; // 如果公告关闭，则直接返回
+        }
+
+        var shownVersion = getCookie('announcementVersion');
+        if (shownVersion !== announcementVersion) {
+            layui.use('layer', function(){
+                var layer = layui.layer;
+                layer.open({
+                    title: '公告',
+                    content: '已修复拉取Redis镜像报错！<br><img src="https://img.yzcdn.net/2024/08/14/227e95bd7d4ee124251bce04c94d9f4.png" style="width:100%" />',
+                    area: '300px;',
+                    closeBtn: 0,
+                    btn: ['我知道了'],
+                    yes: function(index){
+                        closeAnnouncement();
+                        layer.close(index);
+                    }
+                });
+            });
+        }
+    }
+
+    function closeAnnouncement() {
+        setCookie('announcementVersion', announcementVersion, 365);
+    }
+
+    // 页面加载时检查是否需要显示公告
+    window.onload = checkAnnouncement;
+</script>
 </head>
   <body>
       <script>
